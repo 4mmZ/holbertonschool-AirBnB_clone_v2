@@ -1,11 +1,14 @@
 #!/usr/bin/python3
-
+""" document """
 from flask import Flask
+
 
 app = Flask(__name__)
 
+
 @app.route('/', strict_slashes=False)
 def display_hello():
+    """ document """
     return "Hello HBNB!"
 
 

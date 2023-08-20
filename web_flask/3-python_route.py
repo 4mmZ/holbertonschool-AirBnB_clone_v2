@@ -24,11 +24,13 @@ def display_C(text):
     text_with_spaces = text.replace("_", " ")
     return f"C {text_with_spaces}"
 
+
 @app.route('/python/<text>', strict_slashes=False)
 def display_Python(text):
     """ display Python"""
-    text_with_spaces = text.replace("_", " ")
-    return f"Python {text_with_spaces}"
+    text_w_spaces = text.replace("_", " ")
+    return f"Python {text_w_spaces}"
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)

@@ -25,6 +25,7 @@ def display_C(text):
     return f"C {text_with_spaces}"
 
 
+@app.route('/python', strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
 def display_Python(text):
     """ display Python"""

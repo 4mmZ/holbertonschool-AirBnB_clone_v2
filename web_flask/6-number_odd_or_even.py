@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Starts a Flask web application"""
 from flask import Flask
+from flask import render_template
 
 app = Flask(__name__)
 
@@ -31,6 +32,28 @@ def c(text):
 def python_HBNB(text="is cool"):
     """starts a Flask web application and display 'python' + '<text>'"""
     return "Python {}".format(text.replace('_', ' '))
+
+
+@app.route("/number/<int:n>", strict_slashes=False)
+def number_HBNB(n):
+    """Display 'n is a number'."""
+    return "{} is a number".format(n)
+
+
+@app.route('/number_template/<int:n>', strict_slashes=False)
+def number_template(n):
+    """Display a HTML page only if n is an integer."""
+    return render_template('5-number.html', n=n)
+
+
+@app.route('/number_odd_or_even/<int:n>', strict_slashes=False)
+def number_odd_or_even(n):
+    """
+    Display a HTML page only if n is an integer.
+
+    “Number: n is even|odd”
+    """
+    return render_template('6-number_odd_or_even.html', n=n)
 
 
 if __name__ == '__main__':

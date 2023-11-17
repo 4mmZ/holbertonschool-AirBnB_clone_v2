@@ -18,5 +18,12 @@ def display_hbnb():
     return "HBNB"
 
 
+@app.route('/c/<text>', strict_slashes=False)
+def display_C(text):
+    """ display C """
+    text_with_spaces = text.replace("_", " ")
+    return f"C "
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
